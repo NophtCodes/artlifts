@@ -1,16 +1,35 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, FlatList, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  FlatList,
+  StyleSheet,
+} from "react-native";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 
 export default function WorkoutScreen({ setCurrentScreen }) {
   const [routines, setRoutines] = useState([
-    { id: "1", name: "Arms 1", exercises: "Treadmill, Bicep Curl, Hammer Curl, Triceps Pushdown" },
-    { id: "2", name: "Pull", exercises: "Deadlift, Bent Over Row, Pull Up, Face Pull" },
-    { id: "3", name: "Push 1", exercises: "Bench Press, Triceps Pushdown, Shoulder Press" },
+    {
+      id: "1",
+      name: "Arms 1",
+      exercises: "Treadmill, Bicep Curl, Hammer Curl, Triceps Pushdown",
+    },
+    {
+      id: "2",
+      name: "Pull",
+      exercises: "Deadlift, Bent Over Row, Pull Up, Face Pull",
+    },
+    {
+      id: "3",
+      name: "Push 1",
+      exercises: "Bench Press, Triceps Pushdown, Shoulder Press",
+    },
   ]);
 
   return (
     <View style={styles.container}>
+      <Text style={styles.header}>Workout</Text>
 
       {/* Блок Quick Start */}
       <Text style={styles.sectionTitle}>Quick Start</Text>
@@ -27,7 +46,7 @@ export default function WorkoutScreen({ setCurrentScreen }) {
         </TouchableOpacity>
         <TouchableOpacity style={styles.actionButton}>
           <Ionicons name="search" size={16} color="white" />
-          <Text style={styles.actionButtonText}>Explore</Text>
+          <Text style={styles.actionButtonText}>Template Routines</Text>
         </TouchableOpacity>
       </View>
 
@@ -69,20 +88,64 @@ export default function WorkoutScreen({ setCurrentScreen }) {
 // Стили
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#121212", padding: 20 },
-  header: { fontSize: 24, fontWeight: "bold", color: "#fff", textAlign: "center", marginBottom: 10 },
-  sectionTitle: { fontSize: 16, fontWeight: "bold", color: "#ccc", marginTop: 20, marginBottom: 10 },
-  startWorkoutButton: { backgroundColor: "#333", padding: 15, borderRadius: 10, alignItems: "center" },
+  header: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#fff",
+    textAlign: "center",
+    marginBottom: 10,
+  },
+  sectionTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#ccc",
+    marginTop: 20,
+    marginBottom: 10,
+  },
+  startWorkoutButton: {
+    backgroundColor: "#333",
+    padding: 15,
+    borderRadius: 10,
+    alignItems: "center",
+  },
   buttonText: { color: "#fff", fontSize: 16 },
   row: { flexDirection: "row", justifyContent: "space-between" },
-  actionButton: { flexDirection: "row", backgroundColor: "#222", padding: 12, borderRadius: 8, alignItems: "center", width: "48%", justifyContent: "center" },
+  actionButton: {
+    flexDirection: "row",
+    backgroundColor: "#222",
+    padding: 12,
+    borderRadius: 8,
+    alignItems: "center",
+    width: "48%",
+    justifyContent: "center",
+  },
   actionButtonText: { color: "#fff", marginLeft: 8 },
-  routineCard: { backgroundColor: "#222", padding: 15, borderRadius: 10, marginBottom: 10 },
+  routineCard: {
+    backgroundColor: "#222",
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 10,
+  },
   routineTitle: { fontSize: 18, fontWeight: "bold", color: "#fff" },
   routineDesc: { fontSize: 14, color: "#ccc", marginVertical: 5 },
-  startRoutineButton: { backgroundColor: "blue", padding: 10, borderRadius: 8, alignItems: "center", marginTop: 5 },
+  startRoutineButton: {
+    backgroundColor: "blue",
+    padding: 10,
+    borderRadius: 8,
+    alignItems: "center",
+    marginTop: 5,
+  },
   startRoutineText: { color: "#fff", fontWeight: "bold" },
-  navbar: { flexDirection: "row", justifyContent: "space-around", backgroundColor: "#181818", paddingVertical: 10, position: "absolute", bottom: 0, left: 0, right: 0 },
+  navbar: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    backgroundColor: "#181818",
+    paddingVertical: 10,
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
   navButton: { alignItems: "center" },
   navText: { color: "#ccc", fontSize: 12, marginTop: 2 },
 });
-
